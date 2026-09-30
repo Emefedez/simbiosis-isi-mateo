@@ -271,6 +271,8 @@ Cada NFR expresa una única condición de calidad o restricción medible y verif
 | FR-213 | El sistema debe validar el formato y el tamaño del archivo de documentación profesional antes de continuar con el registro, mostrando junto al campo de carga cualquier error detectado. | UR-01 | — | Vigente |
 | FR-214 | El sistema debe mostrar, mientras la cuenta esté pendiente de verificación del correo electrónico, una pantalla que indique que el registro no se ha completado. | UR-01 | — | Vigente |
 | FR-215 | El sistema debe impedir finalizar el registro si alguna de las dos casillas de aceptación —términos y condiciones, política de privacidad— no está marcada. | UR-01 | — | Vigente |
+| FR-216 | El sistema debe permitir la creación de cuentas mediante una conexión segura mediante OAuth 2.0 u OpenID Connect sobre HTTPS. | [#2.3.1](Emefedez/simbiosis-isi-mateo/docs/captura/acta-acuerdos-tecnicos-operativos.md) | — | Vigente |
+| FR-217 | El sistema debe permitirla anexión de una cuenta de Google a una cuente existente si comparten el correo electrónico de manera segura mediante OAuth 2.0 u OpenID Connect sobre HTTPS. | [#2.3.1](Emefedez/simbiosis-isi-mateo/docs/captura/acta-acuerdos-tecnicos-operativos.md) | — | Vigente |
 
 FR-017 se conserva para no perder el identificador histórico, pero su estado es `Retirado`: la autenticación de dos factores queda excluida de esta fase.
 
@@ -279,6 +281,10 @@ FR-017 se conserva para no perder el identificador histórico, pero su estado es
 | ID | Categoría y atributo | Requisito no funcional | Ámbito (Global/Local) | UR/FR relacionados | Método de comprobación | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
 | NFR-07 |NFR-Q (Eficiencia; Escalabilidad; Mantenibilidad) |La plataforma mantendrá los objetivos de capacidad y rendimiento definidos para la primera versión sin intervención manual del personal de la organización.| G | -  | Prueba de carga automatizada con 100 usuarios concurrentes y 10 operaciones/s durante 30 min; comprobar mediante registros de monitorización, ausencia de intervención manual. | - |
+| NFR-02 |NFR-I (Interfaz externa) |La plataforma permitirá el inicio de sesión a través de Google.| L | UR-02, FR-216, FR-217  | Inicio de sesión a través de la cuenta de google, tanto como para crear una cuenta nuevo como para vincular una a un correo existente. | - |
+| NFR-03 |NFR-R (Entorno e interfaz) |El usuario interactuará con la plataforma a través de una interfaz web responsiva sin aplicación nativa.| G | - | Acceder a la plataforma en distintos dispositivos y navegadores para comprobar su adaptación. | - |
+
+
 
 Categorías y atributos: 
 1) Requisitos de calidad (NFR-Q): Rendimiento, Usabilidad, Seguridad, Fiabilidad, Disponibilidad, Modificabilidad, Portabilidad, Eficiencia, Escalabilidad, Verificabilidad / Testabilidad, Robustez, Seguridad funcional (safety), Integridad, Reusabilidad, Instalabilidad.
