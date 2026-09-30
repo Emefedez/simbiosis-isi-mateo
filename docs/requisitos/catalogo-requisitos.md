@@ -282,7 +282,9 @@ FR-017 se conserva para no perder el identificador histórico, pero su estado es
 | --- | --- | --- | --- | --- | --- | --- |
 | NFR-07 |NFR-Q (Eficiencia; Escalabilidad; Mantenibilidad) |La plataforma mantendrá los objetivos de capacidad y rendimiento definidos para la primera versión sin intervención manual del personal de la organización.| G | -  | Prueba de carga automatizada con 100 usuarios concurrentes y 10 operaciones/s durante 30 min; comprobar mediante registros de monitorización, ausencia de intervención manual. | - |
 | NFR-02 |NFR-I (Interfaz externa) |La plataforma permitirá el inicio de sesión a través de Google.| L | UR-02, FR-216, FR-217  | Inicio de sesión a través de la cuenta de google, tanto como para crear una cuenta nuevo como para vincular una a un correo existente. | - |
-| NFR-03 |NFR-R (Entorno e interfaz) |El usuario interactuará con la plataforma a través de una interfaz web responsiva sin aplicación nativa.| G | - | Acceder a la plataforma en distintos dispositivos y navegadores para comprobar su adaptación. | - |
+| NFR-03 |NFR-R (Entorno y compatibilidad) |El usuario interactuará con la plataforma a través de una interfaz web responsiva sin aplicación nativa.| G | - | Acceder a la plataforma en distintos dispositivos y navegadores para comprobar su adaptación. | - |
+| NFR-04 |NFR-Q (Fiabilidad y disponibilidad) |El sistema debe mantenerse accesible por lo menos un 99,5% del tiempo las 24 horas del día, todos los días de la semana. | G | - | Se realizará una carga pesada de usuarios algo superior a la media estimada que aguantará el servicio, durante un periodo suficientemente largo como para estimar la consistencia. | - |
+| NFR-05 |NFR-Q (Fiabilidad y disponibilidad) |El sistema debe realizar una copia diaria de los datos. | G | - | Se harán pruebas y simulacros de migración para ver si los datos se copian y restauran de manera correcta. | - |
 
 
 
