@@ -268,6 +268,38 @@ enlazar a los términos de esta sección, pero no los definirá de nuevo.
 
 | Término | Definición en Proyecto Simbiosis | Fuente |
 | --- | --- | --- |
+| **Paciente** | Persona usuaria de la plataforma que convive con enfermedad inflamatoria intestinal. Puede acceder a las funcionalidades destinadas a pacientes tras registrarse y verificar su correo electrónico, sin necesidad de aprobación adicional. | Acta de captura, 1.1 y 1.2 |
+| **Cuidador** | Persona registrada que cuida a uno o varios pacientes. Su perfil requiere aprobación y la asociación con cada paciente necesita la autorización de este. | Acta de captura, 1.2 y 2 |
+| **Nutricionista** | Rol profesional que engloba a médicos y nutricionistas, que tendrán las mismas funciones y permisos en la plataforma. Para actuar con este rol será necesario acreditar la condición profesional. | Acta de captura, 1.3 |
+| **Nutricionista acreditado** | Usuario con perfil de nutricionista cuya condición profesional ha sido acreditada mediante documentación. Sus intervenciones y publicaciones se distinguirán mediante una estrella u otro icono junto a su nombre. | Acta de captura, 1.3 |
+| **Coordinador** | Rol responsable de administrar y moderar el foro. También interviene en la gestión de contenidos y, según los acuerdos posteriores del proyecto, en la aprobación de determinados perfiles. | Acta de captura, 4 |
+| **Perfil de usuario** | Conjunto de características y permisos asociados a una cuenta según el papel que desempeña la persona en la plataforma, como paciente, cuidador o nutricionista. Una misma cuenta puede tener simultáneamente los perfiles de paciente y cuidador. | Acta de captura, 1 y 2 |
+| **Asociación paciente-cuidador** | Relación entre un paciente y un cuidador que permite a este último ejercer sus funciones respecto al paciente. Requiere autorización del paciente y determina el acceso del cuidador a su información de salud. | Acta de captura, 1.2 y 2 |
+| **Cuenta inactiva de cuidador** | Cuenta de un cuidador que lleva tres meses sin estar asociada a ningún paciente. Puede reactivarse si el cuidador comienza a cuidar a otro paciente. | Acta de captura, 2 |
+| **Información de salud** | Información opcional y privada aportada por un paciente. Puede utilizarse para facilitar la búsqueda de recetas adecuadas y solo será accesible por un cuidador en la medida autorizada expresamente por el paciente. | Acta de captura, 2 y 7.1 |
+| **Receta** | Contenido de la plataforma relacionado con la alimentación que puede ser buscado, comentado, valorado, compartido o recomendado por los usuarios. | Acta de captura, 3 |
+| **Receta propuesta** | Receta aportada por un paciente o cuidador que todavía debe ser validada por un nutricionista antes de publicarse como receta validada. | Acta de captura, 3 |
+| **Receta validada** | Receta que ha sido validada por un nutricionista. Los nutricionistas pueden publicar directamente recetas validadas o validar las propuestas por pacientes y cuidadores. | Acta de captura, 3 |
+| **Receta adaptada** | Receta que resulta adecuada para el perfil, las alergias y las restricciones alimentarias declaradas por un paciente. No implica que el sistema modifique automáticamente sus ingredientes o cantidades. | Acta de captura, 3 |
+| **Foro** | Espacio común de la plataforma destinado a compartir dudas y experiencias relacionadas con la convivencia con la enfermedad. Puede consultarse sin registro, aunque es necesario registrarse para participar. | Acta de captura, 1.1 y 4 |
+| **Moderación** | Gestión y supervisión del contenido publicado en el foro. El coordinador es el único rol responsable de administrar y moderar este espacio. | Acta de captura, 4 |
+| **Contenido inapropiado** | Contenido de la plataforma que puede ser reportado por los usuarios, incluyendo recetas, comentarios, publicaciones y perfiles. Sus categorías y reglas concretas de moderación están pendientes de definición. | Acta de captura, 4 y 9 |
+| **Reporte de contenido** | Comunicación realizada por un usuario para señalar contenido considerado inapropiado dentro de la plataforma. | Acta de captura, 4 |
+| **Publicación de salud** | Artículo breve sobre alimentación o hábitos de vida saludables relacionados con personas que conviven con la enfermedad, publicado por un nutricionista y dirigido principalmente a pacientes y cuidadores. | Acta de captura, 5 |
+| **Mensaje directo** | Mecanismo de comunicación privada habilitado entre usuarios de la plataforma. | Acta de captura, 4 |
+| **Seguimiento de usuarios** | Funcionalidad social que permite a una persona usuaria seguir a otras personas dentro de la plataforma. | Acta de captura, 4 |
+| **Reacción positiva** | Interacción social, como «me gusta», que permite reaccionar positivamente al contenido. La plataforma no incluirá reacciones negativas como «no me gusta». | Acta de captura, 4 |
+| **Guía inicial** | Guía de introducción al uso de la plataforma que se mostrará al usuario y podrá ser omitida. No incluirá un asistente conversacional. | Acta de captura, 6 |
+| **Ayuda contextual** | Información de ayuda disponible en cada pantalla para facilitar el uso de la plataforma. | Acta de captura, 6 |
+| **Accesibilidad** | Característica de la plataforma orientada a que pueda ser utilizada fácilmente por los pacientes, incluidas las personas con necesidades de accesibilidad. | Acta de captura, 7.3 |
+| **Aplicación web** | Forma de acceso a Simbiosis mediante navegadores en ordenadores y dispositivos móviles, sin necesidad de aplicaciones móviles nativas ni una aplicación de escritorio independiente. | Acta de captura, 7.4 |
+| **Interfaz responsiva** | Interfaz web diseñada para adaptarse adecuadamente a diferentes dispositivos y tamaños de pantalla, priorizando una experiencia cómoda desde dispositivos móviles. | Acta de captura, 7.4 |
+| **Infraestructura en la nube** | Infraestructura donde se desplegará la plataforma y cuya gestión corresponderá a un proveedor externo. | Acta de captura, 7.4 |
+| **Registro** | Proceso necesario para utilizar las funcionalidades destinadas a pacientes, cuidadores y nutricionistas y para participar en el foro. Requiere nombre completo, alias, correo electrónico válido y verificado y teléfono móvil. | Acta de captura, 1.1 |
+| **Aprobación de cuenta** | Proceso adicional requerido para determinados perfiles antes de poder ejercer sus funciones. Los pacientes no requieren aprobación tras verificar su correo, mientras que cuidadores y nutricionistas sí. | Acta de captura, 1.2 |
+| **Acreditación profesional** | Proceso mediante el que una persona demuestra documentalmente su condición profesional para poder actuar como nutricionista en la plataforma. | Acta de captura, 1.3 |
+| **Datos obligatorios de registro** | Nombre completo, alias, correo electrónico válido y verificado y número de teléfono móvil que toda cuenta debe aportar al registrarse. | Acta de captura, 1.1 |
+| **Datos opcionales de registro** | Dirección postal, fecha de nacimiento, fotografía de perfil e información de salud, cuya aportación no es obligatoria. | Acta de captura, 1.1 |
 
 ## 10. Modelos de análisis
 
