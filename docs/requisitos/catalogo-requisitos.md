@@ -4,19 +4,29 @@
 
 **Versión:** 1.10  
 **Fecha:** 23/09/2026  
-**Estado:** Base funcional consolidada: UR y FR canónicos; NFR pendientes  
-**Fuente de verdad:** este catálogo contiene el texto canónico de los requisitos de usuario (UR) y funcionales (FR). Incorporará también los requisitos no funcionales (NFR) cuando se consoliden.
+**Estado:** Base funcional con ampliación de NFR; consolidación y trazabilidad pendientes
+**Fuente de verdad:** este catálogo contiene el texto canónico de los requisitos de usuario (UR), funcionales (FR) y no funcionales (NFR).
 
 Este documento complementa la [Especificación de requisitos de software](./srs.md). La SRS organiza el contexto, el alcance, las decisiones pendientes y los modelos; este catálogo conserva una única copia de cada requisito y sus relaciones.
 
 La referencia común al catálogo canónico y a la SRS aparece en la cabecera. La procedencia de cada incorporación o modificación queda registrada en el control de cambios.
+
+## Índice
+
+1. [Convenciones](#1-convenciones)
+2. [Objetivos de negocio relacionados](#2-objetivos-de-negocio-relacionados)
+3. [Requisitos de usuario](#3-requisitos-de-usuario)
+4. [Requisitos funcionales](#4-requisitos-funcionales)
+5. [Requisitos no funcionales](#5-requisitos-no-funcionales)
+6. [Matriz de trazabilidad](#6-matriz-de-trazabilidad)
+7. [Control de cambios](#7-control-de-cambios)
 
 ## 1. Convenciones
 
 - `BO-0X`: objetivo de negocio, cuando se necesite conservar la relación con el Documento de Visión y Alcance.
 - `UR-0X`: requisito de usuario.
 - `FR-0XX`: requisito funcional.
-- `NFR-0X`: requisito no funcional.
+- `NFR-0X` y `NFR-0XX`: requisito no funcional. Se conservan los identificadores locales existentes; los nuevos utilizan tres cifras.
 - `UC-0X`: caso de uso relacionado, cuando exista un modelo que lo interprete.
 
 Los UR se redactan desde la perspectiva de la persona usuaria: «El [tipo de usuario] podrá [acción] [finalidad]». Cada UR expresa una única necesidad de alto nivel.
@@ -288,6 +298,49 @@ FR-017 se conserva para no perder el identificador histórico, pero su estado es
 
 
 
+### Incorporaciones compatibles de la plantilla
+
+**Pendientes de revisión:** se conserva FR-149 como vigente, aunque la plantilla lo retira por la responsabilidad exclusiva del coordinador. También se conservan las dos apariciones locales de FR-216 y FR-217, que describen funciones distintas; su identidad y trazabilidad requieren aclaración antes de consolidar el catálogo.
+
+Se conservan los cinco NFR locales anteriores. Los requisitos nuevos de la [plantilla de referencia](https://github.com/kikebar/simbiosis-proyecto-isi-plantilla/tree/caca2e4) reciben identificadores locales libres, sin reutilizar ni renumerar los existentes.
+
+| ID | Categoría y atributo | Requisito no funcional | Ámbito | UR/FR relacionados | Fuente | Método de comprobación | Estado |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| NFR-008 | NFR-Q · Localización e internacionalización | La primera versión estará disponible en castellano y gallego. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.4.4; [acta de captura de requisitos generales](../captura/acta-captura-requisitos-generales.md), §7.2 | Revisar todas las pantallas y mensajes de la primera versión en ambos idiomas. | Vigente |
+| NFR-009 | NFR-Q · Capacidad y escalabilidad | La plataforma soportará una carga de 100 usuarios concurrentes y 10 operaciones por segundo durante 30 minutos. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.1.1 y §2.1.2 | Ejecutar una prueba de carga con 100 usuarios concurrentes y 10 operaciones por segundo durante 30 minutos. | Vigente |
+| NFR-010 | NFR-Q · Rendimiento | Con la carga de NFR-009, el 95 % de los inicios de sesión y de las consultas definidas para la prueba se completará en un máximo de 2 segundos. | Local | Pendiente de enlazar | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.1.2 y §2.1.3 | Medir los tiempos del 95 % de las operaciones indicadas durante la prueba de NFR-009, con los límites de medición del acta. | Vigente |
+| NFR-011 | NFR-Q · Rendimiento | Con la carga de NFR-009, el 95 % de las publicaciones de recetas, comentarios o mensajes se completará en un máximo de 3 segundos. | Local | Pendiente de enlazar | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.1.2 y §2.1.3 | Medir los tiempos del 95 % de las operaciones indicadas durante la prueba de NFR-009, con los límites de medición del acta. | Vigente |
+| NFR-012 | NFR-Q · Recuperabilidad | Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.2.1 | Probar la recuperación tras un incidente grave y medir el tiempo desde su declaración hasta la recuperación de las funciones principales. | Vigente |
+| NFR-013 | NFR-Q · Integridad | Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.2.1 | Restaurar una copia tras un incidente simulado y comprobar la antigüedad de la información recuperada. | Vigente |
+| NFR-014 | NFR-Q · Accesibilidad | Todas las pantallas y funciones de la primera versión cumplirán el estándar WCAG 2.2, nivel AA. La conformidad se revisará antes de aceptar la versión y después de cambios importantes de interfaz. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.4.2 y §2.4.3 | Combinar una herramienta automática y una revisión manual de los recorridos indicados en el acta. | Vigente |
+| NFR-015 | NFR-R · Despliegue | La plataforma se desplegará en una infraestructura en la nube gestionada por un proveedor externo. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.5.2; [SRS](./srs.md), §2.4; [Documento de Visión y Alcance](../vision/vision_y_alcance.md), §3.3 | Revisar la arquitectura y la configuración del despliegue. | Vigente |
+| NFR-016 | NFR-R · Tecnología web | La interfaz cliente se implementará utilizando estándares web abiertos —HTML5, CSS y ECMAScript— y no dependerá de plugins propietarios ni requerirá la instalación de software adicional en el dispositivo de la persona usuaria. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.5.1 | Revisar las dependencias del cliente y comprobar el acceso sin plugins ni software adicional. | Vigente |
+| NFR-017 | NFR-I · Interfaz de usuario y localización | La interfaz permitirá cambiar entre castellano y gallego. Al seleccionar un idioma, los textos de navegación, formularios, validaciones y mensajes de la interfaz se mostrarán íntegramente en ese idioma. | Global | — | [Acta de acuerdos técnicos y operativos](../captura/acta-acuerdos-tecnicos-operativos.md), §2.4.4; [acta de captura de requisitos generales](../captura/acta-captura-requisitos-generales.md), §7.2; [SRS](./srs.md), §7 | Cambiar el idioma y revisar todas las pantallas y mensajes de la primera versión en ambos idiomas. | Vigente |
+
+La relación de NFR-010 y NFR-011 con identificadores UR o FR concretos queda pendiente de completar. La consolidación de los NFR locales anteriores continúa pendiente.
+
+#### Correspondencia de identificadores
+
+Esta tabla permite consultar el plan E1 y la plantilla sin confundir su numeración con la local. Las correspondencias de requisitos ya existentes indican el mismo ámbito; no implican adoptar las diferencias de redacción, métricas o comprobación de la plantilla.
+
+| ID en la plantilla | ID local |
+| --- | --- |
+| NFR-001 | NFR-04 |
+| NFR-002 | NFR-05 |
+| NFR-003 | NFR-008 |
+| NFR-004 | NFR-009 |
+| NFR-005 | NFR-010 |
+| NFR-006 | NFR-011 |
+| NFR-007 | NFR-07 |
+| NFR-008 | NFR-012 |
+| NFR-009 | NFR-013 |
+| NFR-010 | NFR-014 |
+| NFR-011 | NFR-03 |
+| NFR-012 | NFR-015 |
+| NFR-013 | NFR-016 |
+| NFR-014 | NFR-017 |
+| NFR-015 | NFR-02 |
+
 Categorías y atributos: 
 1) Requisitos de calidad (NFR-Q): Rendimiento, Usabilidad, Seguridad, Fiabilidad, Disponibilidad, Modificabilidad, Portabilidad, Eficiencia, Escalabilidad, Verificabilidad / Testabilidad, Robustez, Seguridad funcional (safety), Integridad, Reusabilidad, Instalabilidad.
 2) Restricciones (NFR-R): Tecnología y entorno, Hardware, Regulaciones y estándares, Compatibilidad, Interfaces existentes, Restricciones presupuestarias y de gestión.
@@ -312,6 +365,8 @@ Categorías y atributos:
 | UR-13 | FR-181, FR-182, FR-183, FR-184, FR-185, FR-186, FR-187, FR-208, FR-209, FR-210, FR-211, FR-212 | — | — |
 
 ## 7. Control de cambios
+
+**Integración pendiente de consolidación:** se incorporan los cambios compatibles de la plantilla en el commit `caca2e4e64bcf1af108764fc18554a2b5d28e5dd`: índice y diez NFR nuevos (NFR-008–NFR-017). Se conservan los requisitos locales, con la correspondencia de identificadores indicada en el apartado 5. Esta integración no declara una nueva línea base.
 
 Los identificadores no se reutilizan ni se renumeran. Cuando se acepta un cambio, se conserva la identidad del requisito si mantiene el mismo significado; si aparece una necesidad nueva, se asigna un identificador nuevo.
 

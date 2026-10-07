@@ -4,7 +4,7 @@
 
 **Versión:** 0.10  
 **Fecha:** 23/09/2026  
-**Estado:** Base documental con UR y FR consolidados; NFR y glosario pendientes  
+**Estado:** Base documental con glosario incorporado y ampliación de NFR; consolidación y trazabilidad pendientes
 **Destinatarios:** partes interesadas del proyecto
 
 Este documento reúne la especificación de requisitos de software (SRS) de
@@ -13,16 +13,17 @@ catálogo de requisitos, al que esta SRS enlaza sin duplicarlo. El glosario form
 parte de esta SRS, en la sección 9.
 
 En esta versión se fija la estructura y se incorpora el contexto confirmado en
-el Documento de Visión y Alcance y en el acta de captura de A03. Los requisitos
-de usuario y funcionales ya están consolidados en el catálogo. Los requisitos
-no funcionales y el glosario permanecen pendientes. Ningún apartado pendiente
-autoriza a completar información por suposición.
+el Documento de Visión y Alcance y en el acta de captura de requisitos generales.
+Se conservan los requisitos y el glosario locales, y se incorporan los elementos
+compatibles de la plantilla. La consolidación de los NFR y la trazabilidad
+permanecen pendientes. Ningún apartado pendiente autoriza a completar
+información por suposición.
 
 ## Índice
 
 1. [Introducción](#1-introducción)
 2. [Descripción general](#2-descripción-general)
-3. [Requisitos funcionales](#3-requisitos-funcionales)
+3. [Requisitos de usuario y funcionales](#3-requisitos-de-usuario-y-funcionales)
 4. [Requisitos de datos](#4-requisitos-de-datos)
 5. [Requisitos de interfaz externa](#5-requisitos-de-interfaz-externa)
 6. [Atributos de calidad](#6-atributos-de-calidad)
@@ -49,7 +50,8 @@ los sustituyen.
 - `BO-0X` identifica un objetivo de negocio.
 - `UR-0X` identifica un requisito de usuario.
 - `FR-0XX` identifica un requisito funcional.
-- `NFR-0X` identifica un requisito no funcional.
+- `NFR-0X` y `NFR-0XX` identifican requisitos no funcionales; se conservan los
+  identificadores locales existentes.
 - `UC-0X` identifica un caso de uso cuando sea necesario enlazarlo desde otro
   artefacto.
 
@@ -153,11 +155,14 @@ confirmadas.
 Estas condiciones deberán revisarse si un cambio de alcance o una fuente nueva
 las contradice.
 
-## 3. Requisitos funcionales
+## 3. Requisitos de usuario y funcionales
 
 El [catálogo de requisitos](./catalogo-requisitos.md) contiene el texto
-canónico de los requisitos de usuario y funcionales. Es la única fuente de
-verdad para sus identificadores, redacción, asociaciones, fuentes y estado.
+canónico de los requisitos de usuario y funcionales. También recoge los
+objetivos de negocio relacionados, los requisitos no funcionales y un apartado
+para la trazabilidad con los casos de uso, aún pendiente de consolidación. Es
+la única fuente de verdad para los identificadores, la redacción y las
+asociaciones de los requisitos.
 
 Esta sección explica cómo se organizan esos requisitos dentro de la SRS y cómo
 se relacionan con los modelos de análisis. No reproduce el texto de los UR ni
@@ -231,9 +236,8 @@ en la sección 8.
 
 ### 6.1 Organización por atributo
 
-El catálogo clasifica los NFR por rendimiento; seguridad y privacidad;
-disponibilidad y fiabilidad; usabilidad y accesibilidad; compatibilidad y
-portabilidad; y obligaciones legales y normativas.
+El catálogo distingue requisitos de calidad (`NFR-Q`), restricciones de diseño
+e implementación (`NFR-R`) y requisitos de interfaz externa (`NFR-I`).
 
 ### 6.2 Obligaciones legales y normativas
 
@@ -255,9 +259,9 @@ sin una fuente confirmada.
 
 | Identificador | Decisión o pregunta | Fuente | Estado |
 | --- | --- | --- | --- |
-| DP-01 | Precisar versiones compatibles de los navegadores de uso habitual. | Acta de A03, §7.4 | Pendiente |
+| DP-01 | Precisar versiones compatibles de los navegadores de uso habitual. | [Acta de captura de requisitos generales](../captura/acta-captura-requisitos-generales.md), §7.4 | Pendiente |
 | DP-02 | Precisar protocolos y formatos de las integraciones externas. | Sección 5.2 de esta SRS | Pendiente |
-| DP-03 | Precisar formatos regionales y condiciones verificables de localización. | Acta de A03, §7.2 | Pendiente |
+| DP-03 | Precisar formatos regionales y condiciones verificables de localización. | [Acta de captura de requisitos generales](../captura/acta-captura-requisitos-generales.md), §7.2 | Pendiente |
 
 ## 9. Glosario
 
@@ -300,6 +304,11 @@ enlazar a los términos de esta sección, pero no los definirá de nuevo.
 | **Acreditación profesional** | Proceso mediante el que una persona demuestra documentalmente su condición profesional para poder actuar como nutricionista en la plataforma. | Acta de captura, 1.3 |
 | **Datos obligatorios de registro** | Nombre completo, alias, correo electrónico válido y verificado y número de teléfono móvil que toda cuenta debe aportar al registrarse. | Acta de captura, 1.1 |
 | **Datos opcionales de registro** | Dirección postal, fecha de nacimiento, fotografía de perfil e información de salud, cuya aportación no es obligatoria. | Acta de captura, 1.1 |
+| **Alias** | Identificador único elegido durante el registro que se muestra en el foro y otros espacios públicos como identidad visible de la persona usuaria. | [Acta de captura de requisitos de UR-01](../captura/acta-captura-requisitos-ur-01.md), §2.1 y §2.2 |
+| **Cuenta activa** | Cuenta cuyo correo electrónico ya se ha verificado mediante el enlace de activación. La activación no habilita por sí sola las funciones profesionales, que requieren aprobación. | [Acta de captura de requisitos de UR-01](../captura/acta-captura-requisitos-ur-01.md), §2.4 y §2.6 |
+| **Perfil de salud** | Conjunto de datos de salud asociados a un paciente que la plataforma puede utilizar para mostrarle recetas adecuadas. Su representación concreta sigue pendiente de decidir. | [Acta de captura de requisitos generales](../captura/acta-captura-requisitos-generales.md), §2; [acta de captura de requisitos de UR-05](../captura/acta-captura-requisitos-ur-05.md), §4 |
+| **Dato fisiológico** | Medición del estado físico o de salud introducida por el paciente, como peso, altura, presión arterial, frecuencia cardíaca o temperatura corporal. | [Acta de captura de requisitos de UR-05](../captura/acta-captura-requisitos-ur-05.md), §2.1 |
+| **Restricción alimentaria** | Condición declarada por un paciente que debe tenerse en cuenta al buscar recetas adecuadas para él. | [Acta de captura de requisitos generales](../captura/acta-captura-requisitos-generales.md), §3 |
 
 ## 10. Modelos de análisis
 
@@ -324,6 +333,13 @@ paquetes.
 
 ## 11. Trazabilidad y control de cambios
 
+Se incorporan los cambios compatibles de la plantilla en el commit
+`caca2e4e64bcf1af108764fc18554a2b5d28e5dd`, conservando el glosario local y
+añadiendo Alias, Cuenta activa, Perfil de salud, Dato fisiológico y Restricción
+alimentaria. Los requisitos nuevos y sus correspondencias se registran en el
+[catálogo](./catalogo-requisitos.md#7-control-de-cambios). Esta integración
+permanece pendiente de consolidación y no declara una nueva línea base.
+
 La trazabilidad se usará para justificar decisiones y analizar el impacto de un
 cambio; no se exigirá como una matriz exhaustiva de todos los elementos. Las
 relaciones atómicas se mantienen en el
@@ -338,12 +354,13 @@ mantener enlaces hacia sus requisitos de origen.
 ## Estado de la versión
 
 Esta versión 0.10 define la arquitectura documental, el contexto confirmado y
-las convenciones de redacción de UR, FR y NFR. Incorpora los acuerdos de A03
-sobre el rol de nutricionista, el alcance, los idiomas, los navegadores y la
+las convenciones de redacción de UR, FR y NFR. Incorpora los acuerdos del acta
+de captura de requisitos generales sobre el rol de nutricionista, el alcance, los idiomas, los navegadores y la
 infraestructura. También separa la SRS, que explica la especificación integrada,
 del catálogo, que es la fuente canónica de los requisitos atómicos. Los
 requisitos de usuario y funcionales ya están consolidados en el catálogo. El
 glosario forma parte de esta SRS.
 
 Antes de publicar la línea base v1.0 se consolidarán los requisitos no
-funcionales, el glosario y los enlaces de trazabilidad.
+funcionales y los enlaces de trazabilidad. El glosario local se conserva y se
+amplía con términos compatibles de la plantilla.

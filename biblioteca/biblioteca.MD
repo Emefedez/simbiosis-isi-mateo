@@ -6,6 +6,8 @@
 
 Este caso se utiliza en el ejercicio guiado inicial de L4. Contiene los requisitos de usuario (UR) y los requisitos funcionales (FR) necesarios para elaborar el diagrama de casos de uso durante la demostración.
 
+### OJO: No puede haber cadenas de includes.
+
 ## UR-01
 
 El Socio podrá buscar libros en el catálogo para localizar los ejemplares que le interesan.

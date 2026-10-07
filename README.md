@@ -27,10 +27,13 @@ Los nombres de archivo no incluyen números de versión: el histórico y las ver
 │   ├── requisitos/              SRS y catálogo de requisitos
 │   ├── calidad/                  Criterios de revisión de requisitos
 │   ├── cambios/                  Registro de solicitudes de cambio
+│   ├── planificacion/            Planes y evaluaciones de iteración
 │   ├── modelos/                  Modelos y diagramas del proyecto
 │   └── referencias/              Documentos externos o recibidos (no editables)
 └── releases/                    Versiones estables exportadas (p. ej. PDF)
 ```
+
+El [plan de la iteración E1 de Elaboración](docs/planificacion/plan-iteracion-e1.md) define el alcance funcional y el trabajo previsto de una iteración simulada.
 
 ## Convenciones
 
@@ -38,4 +41,3 @@ Los nombres de archivo no incluyen números de versión: el histórico y las ver
 - Sin versiones en los nombres de archivo.
 - `docs/referencias/` contiene únicamente material externo o recibido; los documentos propios viven en las demás carpetas de `docs/`.
 - `releases/` contiene solo exportaciones estables; no es la fuente editable.
-
