@@ -11,11 +11,12 @@ El catálogo no es una especificación independiente: es parte de la SRS. Para c
 
 ## Uso en las prácticas
 
-La SRS se introduce como resultado de L03 y se consolida como línea base común antes de L04. Desde entonces sirve de referencia compartida en las prácticas posteriores:
+La SRS se consolida como línea base común y sirve de referencia compartida en las prácticas:
 
-- L04 y L05 consultan los requisitos para elaborar y describir los casos de uso.
-- L06 y L07 mantienen la procedencia entre requisitos, historias de usuario y criterios de aceptación.
-- L08 utiliza la línea base para analizar el impacto de una solicitud de cambio.
+- L04 construye el diagrama de E1. L05 incorpora E2 al modelo acumulado.
+- L06 redacta las descripciones detalladas de UC-05 y UC-21 con actas aprobadas.
+- L07 divide una épica de búsqueda de UC-21 en tres historias, con criterios de aceptación y revisión INVEST. La épica conserva la necesidad conjunta. Cada historia conserva sus fuentes.
+- L08 continuará el trabajo con historias y backlog. Su alcance definitivo sigue pendiente; la gestión del cambio se intentará recuperar en A10.
 - L09, L10 y L11 emplean los requisitos como fuente para los modelos de análisis.
 
 Las entregas de cada equipo no modifican directamente esta línea base común. El repositorio publica la versión de referencia que deben consultar; los artefactos producidos en cada práctica conservan sus propios enlaces de trazabilidad hacia los requisitos pertinentes.
@@ -35,3 +36,4 @@ Las entregas de cada equipo no modifican directamente esta línea base común. E
 - [Registro de decisiones](../decisiones/registro-decisiones.md)
 - [Criterios de revisión de requisitos](../calidad/criterios-revision-requisitos.md)
 - [Modelos de análisis](../modelos/README.md)
+- [Plantilla de historias de usuario de búsqueda](plantilla-historias-usuario-busqueda.md), v1.1, preparada para L07. Copiarla como `historias-usuario-busqueda.md` en el repositorio individual. La plantilla está vacía; incluye la épica de búsqueda y tres historias con identificadores locales US-01 a US-03. La plantilla está disponible en este repositorio.
