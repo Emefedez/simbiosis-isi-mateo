@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 1.3 | 06/10/2026 | Borrador |
+| 1.4 | 19/10/2026 | Borrador |
 
 Este plan define el trabajo previsto para E2, la segunda iteración de Elaboración. Selecciona las funciones de salud y recetas que se estudiarán. También establece las actividades, los recursos, los productos y los criterios de evaluación.
 
@@ -152,11 +152,14 @@ El equipo debe distinguir las siguientes condiciones: verificación del correo, 
 Antes de programar los escenarios afectados, aclarará estas cuestiones:
 
 - Qué datos puede consultar cada cuidador y cómo selecciona el paciente los datos que comparte.
-- Cómo se representa la autorización y cómo se aplica su revocación a nuevas consultas.
+- Cómo se representa la autorización, cómo se aplica su revocación a nuevas consultas y qué ocurre con una sesión o consulta ya iniciada.
 - Qué respuesta se ofrece al paciente si falla el envío de la invitación al nutricionista.
-- Qué visibilidad tiene una receta pendiente y qué ocurre con su validación cuando se edita.
+- Qué visibilidad tiene una receta pendiente fuera de las consultas acordadas en el acta de UC-21 y qué ocurre con la validación de una receta cuando se edita.
 - Qué información de alergias e intolerancias se utiliza para filtrar y cómo se relaciona con los ingredientes.
-- Qué resultado se muestra si faltan datos del perfil, faltan datos de una receta o no hay coincidencias.
+- Qué respuesta se ofrece si faltan datos del perfil o de una receta para funciones no cubiertas por las actas aprobadas de UC-05 y UC-21.
+- Qué requisito respaldará de forma directa la consulta del detalle de una receta si se define como capacidad independiente en una iteración posterior. El catálogo aún no contiene un FR específico para esa consulta.
+
+Las actas aprobadas de [UC-05 · Actualizar perfil](../captura/acta-acuerdos-uc-05-actualizar-perfil.md) y [UC-21 · Buscar recetas](../captura/acta-acuerdos-uc-21-buscar-recetas.md), v1.1, concretan los recorridos seleccionados. Las cuestiones anteriores corresponden a otros recorridos o ampliaciones fuera de ese alcance. Los pendientes sobre estados de cuenta, aprobación, suspensión y enlaces de correo se conservan en el [plan de E1, apartado 4.6](plan-iteracion-e1.md#46-reglas-y-preguntas-pendientes).
 
 Las respuestas se registrarán como acuerdos de la simulación, con su procedencia. Las decisiones aún no confirmadas permanecerán como preguntas. El plan no modifica por sí mismo el catálogo ni la SRS.
 

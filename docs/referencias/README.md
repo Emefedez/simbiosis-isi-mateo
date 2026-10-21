@@ -9,3 +9,4 @@ Esta carpeta **no** contiene documentos propios del proyecto: los documentos pro
 | Documento | Origen | Fecha de recepción |
 | --- | --- | --- |
 | [Guía rápida para redacción de requisitos y casos de uso](guia-rapida-redaccion-requisitos-y-casos-de-uso.md) | Material docente de Ingeniería de Software I, v1.4 | 22/09/2026 |
+| [Versiones de la plantilla del profesor](plantilla-profesor/README.md) | Repositorio `kikebar/simbiosis-proyecto-isi-plantilla`, commit `99b9bb4` | 21/10/2026 |

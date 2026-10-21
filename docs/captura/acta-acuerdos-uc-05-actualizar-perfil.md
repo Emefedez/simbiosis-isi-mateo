@@ -23,26 +23,26 @@ La consulta se centra en datos personales, datos de contacto y preferencias diet
 
 ### Datos que se pueden modificar
 
-- La persona puede consultar los valores guardados antes de modificarlos.
-- Para esta descripción se consideran el nombre completo, el teléfono, la dirección postal y las preferencias dietéticas.
-- El alias y el correo electrónico se muestran como datos de consulta. No se pueden modificar, conforme a FR-019.
-- El nombre completo y el teléfono siguen siendo obligatorios. La dirección postal es opcional.
-- Las preferencias son opcionales. La persona puede seleccionar ninguna, una o varias: vegana, sin gluten y baja en carbohidratos.
-- Las preferencias no son datos de salud ni sustituyen el registro de alergias. Esta consulta no modifica datos de salud.
+- La `persona` puede `consultar` los `valores` guardados antes de `modificarlos`.
+- Para esta descripción se consideran el nombre completo, el teléfono, la dirección postal y las preferencias dietéticas (`datos personales`).
+- El `alias y el correo` electrónico se muestran como datos de consulta. `No se pueden modificar`, conforme a FR-019.
+- El nombre completo y el teléfono siguen siendo obligatorios. La `dirección postal es opcional`.
+- Las `preferencias` son opcionales. La persona puede seleccionar `ninguna`, una `o varias`: vegana, sin gluten y baja en carbohidratos.
+- Las **preferencias no son datos de salud** ni sustituyen el registro de alergias. Esta consulta no modifica datos de salud (`consulta a parte`).
 
 ### Validación de los cambios
 
-- El nombre completo y el teléfono no pueden quedar vacíos. Un valor formado solo por espacios se considera vacío.
-- El teléfono conserva las reglas de formato del registro, incluidos los prefijos internacionales.
-- Si un dato no es válido, el sistema identifica el campo y explica qué debe corregirse. Conserva los valores introducidos y no guarda ningún cambio.
-- La persona puede corregir los datos y volver a solicitar el guardado.
+- El `nombre completo y el teléfono` **no pueden quedar vacíos**. Un valor formado solo por espacios se considera vacío.
+- El `teléfono` conserva las **reglas de formato** del registro, incluidos los prefijos internacionales.
+- Si un `dato no es válido`, el **sistema identifica** el campo y explica qué **debe corregirse**. Conserva los valores introducidos y no guarda ningún cambio.
+- La `persona` puede `corregir los datos` y `volver a solicitar` el guardado.
 
 ### Guardado y cancelación
 
-- La edición no cambia por sí sola los datos guardados. La persona debe solicitar el guardado.
+- La edición no cambia por sí sola los datos guardados. `La persona debe solicitar el guardado`.
 - Cuando los datos son válidos, el sistema guarda conjuntamente los cambios y confirma que el perfil se ha actualizado.
-- Si la persona cancela antes de guardar, se descartan los cambios de esa edición. El perfil conserva los valores anteriores.
-- Si el sistema no puede guardar, informa del problema y no confirma la actualización. Conserva los valores introducidos para que la persona pueda reintentar el guardado. Los datos guardados permanecen sin cambios.
+- `Si la persona cancela` antes de guardar, `se descartan` los cambios de esa edición. El perfil conserva los valores anteriores.
+- `Si el sistema no puede guardar`, **informa** del problema y no confirma la actualización. Conserva los valores introducidos para que la persona pueda reintentar el guardado. Los datos guardados permanecen sin cambios.
 
 ## 3. Fuentes y relación con los requisitos
 

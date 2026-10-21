@@ -16,7 +16,7 @@ La SRS se consolida como línea base común y sirve de referencia compartida en 
 - L04 construye el diagrama de E1. L05 incorpora E2 al modelo acumulado.
 - L06 redacta las descripciones detalladas de UC-05 y UC-21 con actas aprobadas.
 - L07 divide una épica de búsqueda de UC-21 en tres historias, con criterios de aceptación y revisión INVEST. La épica conserva la necesidad conjunta. Cada historia conserva sus fuentes.
-- L08 continuará el trabajo con historias y backlog. Su alcance definitivo sigue pendiente; la gestión del cambio se intentará recuperar en A10.
+- L08 ordena cinco historias dadas y justifica dos decisiones. Prepara las comprobaciones de NFR-005 y NFR-010 sobre US-03 y una DoD común de cuatro condiciones. La gestión del cambio se intentará recuperar en A10; su diseño sigue pendiente.
 - L09, L10 y L11 emplean los requisitos como fuente para los modelos de análisis.
 
 Las entregas de cada equipo no modifican directamente esta línea base común. El repositorio publica la versión de referencia que deben consultar; los artefactos producidos en cada práctica conservan sus propios enlaces de trazabilidad hacia los requisitos pertinentes.
@@ -31,6 +31,7 @@ Las entregas de cada equipo no modifican directamente esta línea base común. E
 
 ## Documentación relacionada
 
+- [Plantilla de backlog](plantilla-backlog.md), v1.2. Estructura vacía para preparar `backlog-propuesto.md`: orden, decisiones de prioridad, comprobaciones de calidad y Definición de Hecho. La posición y el identificador de cada historia son independientes. La conclusión vincula una condición de DoD con la evidencia necesaria.
 - [Visión y alcance](../vision/vision_y_alcance.md)
 - [Actas de captura y aclaraciones](../captura/README.md)
 - [Registro de decisiones](../decisiones/registro-decisiones.md)

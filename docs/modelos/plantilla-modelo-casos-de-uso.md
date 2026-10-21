@@ -108,13 +108,11 @@ Consulta el [catálogo canónico](../requisitos/catalogo-requisitos.md) y la [SR
 
 **Desarrollo posterior.** Este apartado queda pendiente en E1. Se completará cuando se trabajen las descripciones de los casos de uso. La existencia de este apartado no exige describirlos ahora.
 
-Repite el esquema siguiente para cada caso que se vaya a describir. Usa el identificador y el nombre del apartado 3. El nivel de detalle dependerá del trabajo previsto para ese caso.
+Repite el esquema siguiente para cada caso que se vaya a describir. Sustituye `UC-XX` y el nombre del encabezado por el identificador y el nombre del apartado 3; numera los apartados de forma consecutiva. El nivel de detalle dependerá del trabajo previsto para ese caso.
 
-### 6.1 Descripción de un caso
+### 6.1 Descripción detallada UC-XX — [Nombre del caso de uso]
 
-**Identificador y nombre:** [Indica el caso.]
-
-**Estado de la descripción:** [Indica el nivel de detalle y el alcance desarrollado.]
+**Identificador y nombre del caso de uso:** [Indica el caso.]
 
 **Objetivo:** [Explica qué resultado pretende obtener el participante.]
 
@@ -124,9 +122,9 @@ Repite el esquema siguiente para cada caso que se vaya a describir. Usa el ident
 
 **Inicio:** [Indica qué acción o suceso inicia el caso.]
 
-**Escenario principal:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
 
-**Alternativas y errores:** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
 
 **Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
 
