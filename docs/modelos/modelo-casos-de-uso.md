@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 2.4 | 19/10/2026 | Revisado |
+| 2.5 | 23/10/2026 | Revisado; descripciones detalladas de UC-05 y UC-21 incorporadas |
 
 **Iteración de referencia:** E2. Este documento recoge el modelo acumulado después de incorporar la vista de salud y recetas.
 
@@ -24,6 +24,7 @@ Los diagramas representan distintas vistas del mismo modelo. Los nombres de los 
   - [6.2 Descripción detallada UC-21 — Buscar recetas](#62-descripción-detallada-uc-21--buscar-recetas)
 - [7 Continuidad entre iteraciones](#7-continuidad-entre-iteraciones)
 - [Anexo. Equivalencia de los NFR de la plantilla](#anexo-equivalencia-de-los-nfr-de-la-plantilla)
+- [Anexo. Versión de trabajo previa de UC-05 y UC-21 (redacción propia)](#anexo-versión-de-trabajo-previa-de-uc-05-y-uc-21-redacción-propia)
 - [Anexo. Versión original errónea de UC-05](#anexo-versión-original-errónea-de-uc-05)
 - [Anexo. Versión original errónea de UC-21](#anexo-versión-original-errónea-de-uc-21)
 
@@ -79,7 +80,7 @@ El registro de auditoría forma parte del comportamiento del sistema. No requier
 
 ## 3 Casos de uso
 
-Los objetivos de esta tabla son resúmenes. Las descripciones detalladas quedan pendientes en el apartado 6.
+Los objetivos de esta tabla son resúmenes. Las descripciones detalladas disponibles se recogen en el apartado 6.
 
 | Identificador | Nombre | Objetivo | Participantes |
 | --- | --- | --- | --- |
