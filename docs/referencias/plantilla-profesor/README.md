@@ -15,5 +15,7 @@ La estructura de carpetas reproduce la del repositorio. Los enlaces relativos in
 | `docs/planificacion/plan-iteracion-e1.md` | [plan-iteracion-e1.md](../../planificacion/plan-iteracion-e1.md) | La versión propia adapta el plan a los identificadores locales y añade contenido propio. |
 | `docs/modelos/imagenes/README.md` | [README de imágenes](../../modelos/imagenes/README.md) | Notas de trabajo propias. |
 | `docs/modelos/imagenes/casos-de-uso-acceso-cuentas-ayuda-e1.png` | [Imagen propia](../../modelos/imagenes/casos-de-uso-acceso-cuentas-ayuda-e1.png) | Diagrama de E1 de la plantilla. El modelo enlaza el diagrama propio. |
+| `docs/modelos/modelo-casos-de-uso.md` | [modelo-casos-de-uso.md](../../modelos/modelo-casos-de-uso.md) | Versión 2.5 de la plantilla con las descripciones canónicas de UC-05 y UC-21. |
+| `docs/requisitos/historias-usuario-busqueda.md` | [historias-usuario-busqueda.md](../../requisitos/historias-usuario-busqueda.md) | Descomposición en US-01, US-02 y US-03 de búsqueda y revisión INVEST. |
 
 La equivalencia entre los NFR de la plantilla y los del catálogo local figura en el anexo del [modelo de casos de uso](../../modelos/modelo-casos-de-uso.md#anexo-equivalencia-de-los-nfr-de-la-plantilla).

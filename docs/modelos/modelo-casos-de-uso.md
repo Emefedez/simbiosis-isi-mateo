@@ -213,7 +213,7 @@ NFR-002, NFR-003, NFR-008, NFR-009 y NFR-014 condicionan los datos, la recuperac
 
 ## 6 Descripciones de los casos de uso
 
-**Estado de la especificación.** Las descripciones detalladas de UC-05 y UC-21 están pendientes de elaboración. Las actas aprobadas definen el comportamiento acordado y delimitan el alcance de estas descripciones.
+**Estado de la especificación.** Las descripciones detalladas de UC-05 y UC-21 se recogen en los apartados 6.1 y 6.2. Las actas aprobadas definen el comportamiento acordado y delimitan su alcance.
 
 **Alcance de las descripciones.** Las actas aprobadas de UC-05 y UC-21, v1.1, complementan el catálogo y concretan el siguiente alcance:
 
@@ -228,6 +228,187 @@ Las descripciones de UC-05 y UC-21 se limitan al comportamiento definido en sus 
 Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y UC-21.
 
 ### 6.1 Descripción detallada UC-05 — Actualizar perfil
+
+**Identificador y nombre del caso de uso:** UC-05 · Actualizar perfil.
+
+**Objetivo:** actualizar los datos personales, de contacto y las preferencias del perfil propio.
+
+**Participantes:** Usuario registrado, como actor principal. No se identifican actores de apoyo en este recorrido.
+
+**Precondiciones:** el usuario dispone de una cuenta activa y tiene una sesión iniciada. La validez de los nuevos datos se comprueba durante el caso de uso.
+
+**Inicio:** el usuario solicita actualizar su perfil.
+
+**Escenario principal de éxito:**
+
+1. El usuario solicita actualizar su perfil.
+2. El sistema presenta los datos actuales y distingue los valores editables de los que permanecen fijos.
+3. El usuario modifica los valores permitidos.
+4. El usuario solicita guardar los cambios.
+5. El sistema comprueba los datos según las reglas del acta.
+6. El sistema guarda conjuntamente los cambios en el perfil.
+7. El sistema confirma la actualización.
+
+**Extensiones (flujos alternativos):**
+
+**5.a. Falta un dato obligatorio o un dato no cumple su formato:**
+
+1. El sistema identifica los campos afectados y explica la corrección necesaria.
+2. El sistema conserva los valores introducidos y no guarda ningún cambio.
+3. El usuario corrige los datos.
+4. El flujo vuelve al paso 4.
+
+**\*.a. El usuario cancela antes de guardar:**
+
+1. El sistema descarta los cambios de la edición.
+2. El perfil conserva los valores guardados anteriormente.
+3. El caso de uso termina sin actualizar el perfil.
+
+**6.a. El sistema no puede guardar:**
+
+1. El sistema informa de que la actualización no se ha completado.
+2. Los datos guardados permanecen sin cambios y se conservan los valores introducidos.
+3. Si el usuario solicita reintentar el guardado, el flujo vuelve al paso 4. Si decide cancelar, se aplica la extensión \*.a.
+
+**Postcondiciones:** con éxito, el perfil contiene los cambios guardados y el usuario recibe la confirmación. El alias y el correo electrónico mantienen sus valores. Si los datos son inválidos, el guardado falla o el usuario cancela, el perfil conserva los valores anteriores; no queda una actualización parcial.
+
+**Reglas y NFR pertinentes:** UR-03, FR-019 y NFR-010 (NFR-014 en el catálogo local, según el [anexo de equivalencia](#anexo-equivalencia-de-los-nfr-de-la-plantilla)), conforme al [respaldo del apartado 5](#5-respaldo-en-los-requisitos), y [acta de UC-05](../captura/acta-acuerdos-uc-05-actualizar-perfil.md), apartado 2. Se pueden modificar el nombre completo, el teléfono, la dirección postal y las preferencias dietéticas. El alias y el correo electrónico son de consulta. El nombre y el teléfono son obligatorios; los valores formados solo por espacios se consideran vacíos y el teléfono admite los prefijos internacionales previstos para el registro. La dirección y las preferencias son opcionales; se pueden seleccionar ninguna, una o varias de estas preferencias: vegana, sin gluten y baja en carbohidratos. Estas preferencias no modifican datos de salud ni alergias.
+
+**Preguntas abiertas:** no se requieren preguntas adicionales para el comportamiento cubierto por el acta. Cualquier discrepancia nueva entre las fuentes deberá registrarse antes de ampliar el recorrido.
+
+### 6.2 Descripción detallada UC-21 — Buscar recetas
+
+**Identificador y nombre del caso de uso:** UC-21 · Buscar recetas.
+
+**Objetivo:** localizar una receta que cumpla los criterios del usuario y consultar su detalle.
+
+**Participantes:** Usuario registrado, como actor principal. No se identifican actores de apoyo en este recorrido.
+
+**Precondiciones:** el usuario está registrado y tiene una sesión iniciada. La existencia de recetas coincidentes se comprueba al ejecutar la búsqueda.
+
+**Inicio:** el usuario solicita buscar recetas.
+
+**Escenario principal de éxito:** parte de una búsqueda por ingrediente que obtiene resultados.
+
+1. El usuario solicita buscar recetas.
+2. El sistema permite indicar los criterios de búsqueda.
+3. El usuario selecciona un ingrediente que desea encontrar.
+4. El usuario solicita ejecutar la búsqueda.
+5. El sistema comprueba que los criterios pueden aplicarse.
+6. El sistema obtiene las recetas que cumplen los criterios, conforme al acta.
+7. El sistema presenta las vistas previas en el orden establecido en el acta.
+8. El usuario selecciona una receta.
+9. El sistema presenta su detalle.
+10. El caso de uso finaliza.
+
+**Extensiones (flujos alternativos):**
+
+**3.a. El usuario busca mediante una palabra o frase:**
+
+1. El usuario introduce el texto de búsqueda en lugar de seleccionar un ingrediente.
+2. El flujo continúa en el paso 4. En el paso 6, el sistema busca el texto en el título o en la descripción breve, sin distinguir mayúsculas ni tildes. Una frase debe aparecer seguida y en el mismo orden.
+
+**3.b. El usuario excluye ingredientes:**
+
+1. El usuario selecciona los ingredientes que desea excluir.
+2. El flujo continúa en el paso 4. En el paso 6, el sistema excluye las recetas que contengan alguno de esos ingredientes.
+
+**3.c. El usuario combina criterios:**
+
+1. El usuario indica varios de los criterios contemplados en el acta.
+2. El flujo continúa en el paso 4. En el paso 6, cada receta debe cumplir todos los criterios indicados.
+
+**5.a. No se ha indicado ningún criterio:**
+
+1. El sistema solicita al menos un criterio y no ejecuta la búsqueda.
+2. El flujo vuelve al paso 3.
+
+**5.b. Un ingrediente se ha incluido y excluido a la vez:**
+
+1. El sistema señala el conflicto, conserva los criterios y no ejecuta la búsqueda.
+2. El usuario corrige la selección.
+3. El flujo vuelve al paso 4.
+
+**6.a. La búsqueda no obtiene resultados:**
+
+1. El sistema informa de que no hay resultados y conserva los criterios.
+2. Si el texto admite una corrección ortográfica, la propone; en otro caso, muestra alternativas relacionadas cuando dispone de ellas. Si no hay sugerencias, lo indica. Las sugerencias se presentan separadas de los resultados y conservan los ingredientes excluidos.
+3. Si el usuario acepta una sugerencia, el sistema presenta los criterios propuestos. Solo si el usuario solicita ejecutar otra búsqueda, el flujo vuelve al paso 5.
+4. Si el usuario modifica los criterios por su cuenta, el flujo vuelve al paso 3. Si decide terminar, el caso finaliza sin consultar una receta.
+
+**6.b. El sistema no puede completar la búsqueda:**
+
+1. El sistema informa del fallo, sin presentarlo como ausencia de resultados, y conserva los criterios.
+2. Si el usuario solicita reintentar, el flujo vuelve al paso 5. Si decide terminar, el caso finaliza sin obtener nuevos resultados.
+
+**7.a. Falta una imagen o no hay valoraciones:**
+
+1. El sistema presenta la vista previa con «Sin imagen» o «Sin valoraciones», según corresponda; no muestra un promedio de cero.
+2. El flujo continúa en el paso 8.
+
+**9.a. El usuario vuelve a los resultados:**
+
+1. El sistema presenta los resultados de la última búsqueda y conserva sus criterios y su orden.
+2. El usuario puede seleccionar otra receta y continuar en el paso 8, o modificar los criterios y volver al paso 3.
+
+**9.b. El sistema no puede cargar el detalle:**
+
+1. El sistema informa del fallo y conserva los criterios de la búsqueda.
+2. Si el usuario solicita reintentar, el sistema vuelve a intentar el paso 9. Si decide terminar, el caso finaliza sin consultar ese detalle.
+
+**Postcondiciones:** con éxito, el usuario ha consultado los resultados de una búsqueda y el detalle de una receta seleccionada. Si no obtiene resultados o se produce un fallo, conoce la situación que impidió completar la consulta. Esta descripción no incorpora el registro del historial ni otras modificaciones de datos.
+
+**Reglas y NFR pertinentes:** UR-08; FR-085, FR-086, FR-087, FR-089, FR-099, FR-102 y FR-119; y NFR-004, NFR-005 y NFR-010 (NFR-009, NFR-010 y NFR-014 en el catálogo local, según el [anexo de equivalencia](#anexo-equivalencia-de-los-nfr-de-la-plantilla)), conforme al [respaldo del apartado 5](#5-respaldo-en-los-requisitos). Se aplican el [acta de UC-21](../captura/acta-acuerdos-uc-21-buscar-recetas.md), apartado 2, y el [plan de E2](../planificacion/plan-iteracion-e2.md#44-búsqueda-y-consulta-de-recetas), apartado 4.4. Los ingredientes se seleccionan entre los nombres disponibles; todos los incluidos deben estar presentes y ninguno de los excluidos puede aparecer. Solo se muestran recetas publicadas y validadas, ordenadas por fecha de publicación descendente. Cada vista previa incluye título, imagen, calificación promedio y descripción breve, con las indicaciones previstas cuando faltan imagen o valoraciones. El detalle muestra título, imagen si existe, ingredientes, instrucciones, tiempo de cocción, porciones, alias del autor e insignia de validación; FR-056, FR-066 y FR-192 respaldan esos datos. El catálogo no contiene un FR específico para consultar el detalle. No se aplican automáticamente las alergias del perfil.
+
+**Preguntas abiertas:** no se requieren preguntas adicionales para el comportamiento cubierto por el acta. La ausencia de un FR específico para la consulta del detalle queda registrada en el respaldo del modelo; no se resuelve atribuyendo esa función a un requisito distinto.
+
+## 7 Continuidad entre iteraciones
+
+E1 estableció la primera vista del modelo. Su estado revisado se conserva en el commit público `984a17f`, con los casos UC-01 a UC-07, UC-09 a UC-11 y UC-31 a UC-35.
+
+La revisión de E1 sustituyó UC-08 Gestionar cuentas por cuatro objetivos del Coordinador y una subfunción de auditoría: UC-31 a UC-35. Esos códigos pertenecen a E1; su numeración no identifica una iteración.
+
+E2 incorpora UC-12 a UC-21. Reutiliza UC-09 para ampliar la ayuda y UC-11 para enviar la invitación a un nutricionista sin cuenta. No modifica la primera vista.
+
+Antes de publicar la solución de E2 se revisó su numeración. UC-15 representa la autorización del nutricionista y UC-16 representa su revocación. UC-17 a UC-21 se asignan de forma consecutiva al resto de los objetivos de acceso y recetas. La consulta del detalle se integró en UC-21 y no conserva un caso independiente. Estas asignaciones son las primeras que se incorporan al modelo revisado de E2.
+
+UC-08 sigue retirado. Su código no se reutiliza. UC-22 a UC-30 no forman parte todavía de este estado del modelo; se incorporarán cuando se registre el resultado de E3.
+
+El modelo acumulado contiene dos vistas, siete actores y veinticinco casos de uso vigentes. Los casos de E1 conservan sus identificadores. Las siguientes iteraciones mantendrán los elementos que conserven el mismo objetivo.
+
+Git conserva las revisiones registradas del modelo y sus imágenes. La evaluación de cada iteración identificará el commit de su estado revisado, conforme a la [guía de modelos](README.md). Cerrar una iteración no declara automáticamente una línea base.
+
+## Anexo. Equivalencia de los NFR de la plantilla
+
+Los NFR de este modelo usan la numeración de la plantilla del profesor (NFR-001 a NFR-015). El [catálogo local](../requisitos/catalogo-requisitos.md) conserva sus identificadores anteriores (NFR-02, NFR-03, NFR-04, NFR-05 y NFR-07) y asigna identificadores nuevos a los demás. Los mismos números significan requisitos distintos en cada numeración. Por ejemplo, NFR-010 es accesibilidad en la plantilla y rendimiento del inicio de sesión en el catálogo local.
+
+Para contrastar un NFR de este modelo con el catálogo local, traduce su identificador con la tabla siguiente. El catálogo local conserva la versión 1.10 y la SRS local la versión 0.10, con los elementos compatibles de la plantilla ya incorporados. La [tabla de correspondencia del catálogo](../requisitos/catalogo-requisitos.md) es la referencia canónica; las copias de la plantilla están en [referencias](../referencias/plantilla-profesor/README.md).
+
+| NFR en este modelo (plantilla) | NFR en el catálogo local | Diferencia de redacción |
+| --- | --- | --- |
+| NFR-001 | NFR-04 | La plantilla concreta la medición: 99,5 % en cada mes natural, con comprobaciones externas cada cinco minutos. El catálogo local indica 99,5 % del tiempo, las 24 horas, todos los días. |
+| NFR-002 | NFR-05 | La plantilla limita la copia diaria a la información de salud y de las recetas. El catálogo local se refiere a «los datos». |
+| NFR-003 | NFR-008 | Ninguna. |
+| NFR-004 | NFR-009 | Ninguna. |
+| NFR-005 | NFR-010 | Mismo texto. Remite a la carga de NFR-004 en la plantilla y de NFR-009 en el catálogo local. |
+| NFR-006 | NFR-011 | Mismo texto. Remite a la carga de NFR-004 en la plantilla y de NFR-009 en el catálogo local. |
+| NFR-007 | NFR-07 | Mismo texto. Cambia la etiqueta de categoría (Rendimiento y Mantenibilidad frente a Eficiencia, Escalabilidad y Mantenibilidad). |
+| NFR-008 | NFR-012 | Ninguna. |
+| NFR-009 | NFR-013 | Ninguna. |
+| NFR-010 | NFR-014 | Ninguna. |
+| NFR-011 | NFR-03 | La plantilla excluye también la aplicación de escritorio y precisa que no se instala software en el dispositivo cliente. El catálogo local solo menciona la ausencia de aplicación nativa. |
+| NFR-012 | NFR-015 | Ninguna. |
+| NFR-013 | NFR-016 | Ninguna. |
+| NFR-014 | NFR-017 | Ninguna. |
+| NFR-015 | NFR-02 | La plantilla exige además que la plataforma no almacene la contraseña de Google y tiene ámbito global. El catálogo local tiene ámbito local y lo relaciona con UR-02, FR-216 y FR-217. |
+
+Los NFR de las columnas «Ninguna» y «Mismo texto» tienen idéntica redacción, salvo el identificador citado. La traducción cambia únicamente el número, no el requisito.
+
+## Anexo. Versión de trabajo previa de UC-05 y UC-21 (redacción propia)
+
+Se conserva la redacción de trabajo previa de UC-05 y UC-21 elaborada en la iteración propia como registro documental y de trazabilidad de los cambios.
+
+### Versión de trabajo previa de UC-05
 
 **Identificador y nombre del caso de uso:** UC-05 · Actualizar perfil.
 
@@ -282,7 +463,8 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 **Preguntas abiertas:** ¿Cómo confirma la actualización el sistema?
 
----------------------------------------------------------------------------
+### Notas previas de trabajo sobre UC-21
+
 **UC-21** Buscar receta:
 
 *UR-08*: incluye la búsqueda por palabras clave, ingredientes y autor. Incluye la exclusión de ingredientes y los filtros de tipo de comida, tiempo, dificultad y restricciones dietéticas. El usuario podrá combinar los criterios y consultar los resultados y el detalle de una receta.
@@ -294,10 +476,9 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 *NFR-004*: Capacidad y escalabilidad.
 *NFR-005* y *NFR-010*: accesibilidad.
-Búsqueda por términos, ingredientes o autor; exclusiones, filtros, combinación de criterios, ordenación y resultados.  respalda la vista previa. E2 incorpora el detalle seleccionado como parte del recorrido, pero el catálogo no contiene un FR específico para esa consulta. |
-----------------------------------------------------------------------------
+Búsqueda por términos, ingredientes o autor; exclusiones, filtros, combinación de criterios, ordenación y resultados. respalda la vista previa. E2 incorpora el detalle seleccionado como parte del recorrido, pero el catálogo no contiene un FR específico para esa consulta.
 
-### 6.2 Descripción detallada UC-21 — Buscar recetas
+### Versión de trabajo previa de UC-21
 
 **Identificador y nombre del caso de uso:** UC-21 · Buscar recetas.
 
@@ -364,48 +545,6 @@ Búsqueda por términos, ingredientes o autor; exclusiones, filtros, combinació
 * La descripción es parcial. No aplica automáticamente un filtro de alergias del perfil. Los demás filtros, las recomendaciones, el historial, los favoritos y las acciones sobre la receta quedan fuera.
 
 **Preguntas abiertas:** ¿Qué ocurre si se intenta la búsqueda sin sesión iniciada? El acta no lo define y FR-119 solo exige el registro y el inicio de sesión.
-
-## 7 Continuidad entre iteraciones
-
-E1 estableció la primera vista del modelo. Su estado revisado se conserva en el commit público `984a17f`, con los casos UC-01 a UC-07, UC-09 a UC-11 y UC-31 a UC-35.
-
-La revisión de E1 sustituyó UC-08 Gestionar cuentas por cuatro objetivos del Coordinador y una subfunción de auditoría: UC-31 a UC-35. Esos códigos pertenecen a E1; su numeración no identifica una iteración.
-
-E2 incorpora UC-12 a UC-21. Reutiliza UC-09 para ampliar la ayuda y UC-11 para enviar la invitación a un nutricionista sin cuenta. No modifica la primera vista.
-
-Antes de publicar la solución de E2 se revisó su numeración. UC-15 representa la autorización del nutricionista y UC-16 representa su revocación. UC-17 a UC-21 se asignan de forma consecutiva al resto de los objetivos de acceso y recetas. La consulta del detalle se integró en UC-21 y no conserva un caso independiente. Estas asignaciones son las primeras que se incorporan al modelo revisado de E2.
-
-UC-08 sigue retirado. Su código no se reutiliza. UC-22 a UC-30 no forman parte todavía de este estado del modelo; se incorporarán cuando se registre el resultado de E3.
-
-El modelo acumulado contiene dos vistas, siete actores y veinticinco casos de uso vigentes. Los casos de E1 conservan sus identificadores. Las siguientes iteraciones mantendrán los elementos que conserven el mismo objetivo.
-
-Git conserva las revisiones registradas del modelo y sus imágenes. La evaluación de cada iteración identificará el commit de su estado revisado, conforme a la [guía de modelos](README.md). Cerrar una iteración no declara automáticamente una línea base.
-
-## Anexo. Equivalencia de los NFR de la plantilla
-
-Los NFR de este modelo usan la numeración de la plantilla del profesor (NFR-001 a NFR-015). El [catálogo local](../requisitos/catalogo-requisitos.md) conserva sus identificadores anteriores (NFR-02, NFR-03, NFR-04, NFR-05 y NFR-07) y asigna identificadores nuevos a los demás. Los mismos números significan requisitos distintos en cada numeración. Por ejemplo, NFR-010 es accesibilidad en la plantilla y rendimiento del inicio de sesión en el catálogo local.
-
-Para contrastar un NFR de este modelo con el catálogo local, traduce su identificador con la tabla siguiente. El catálogo local conserva la versión 1.10 y la SRS local la versión 0.10, con los elementos compatibles de la plantilla ya incorporados. La [tabla de correspondencia del catálogo](../requisitos/catalogo-requisitos.md) es la referencia canónica; las copias de la plantilla están en [referencias](../referencias/plantilla-profesor/README.md).
-
-| NFR en este modelo (plantilla) | NFR en el catálogo local | Diferencia de redacción |
-| --- | --- | --- |
-| NFR-001 | NFR-04 | La plantilla concreta la medición: 99,5 % en cada mes natural, con comprobaciones externas cada cinco minutos. El catálogo local indica 99,5 % del tiempo, las 24 horas, todos los días. |
-| NFR-002 | NFR-05 | La plantilla limita la copia diaria a la información de salud y de las recetas. El catálogo local se refiere a «los datos». |
-| NFR-003 | NFR-008 | Ninguna. |
-| NFR-004 | NFR-009 | Ninguna. |
-| NFR-005 | NFR-010 | Mismo texto. Remite a la carga de NFR-004 en la plantilla y de NFR-009 en el catálogo local. |
-| NFR-006 | NFR-011 | Mismo texto. Remite a la carga de NFR-004 en la plantilla y de NFR-009 en el catálogo local. |
-| NFR-007 | NFR-07 | Mismo texto. Cambia la etiqueta de categoría (Rendimiento y Mantenibilidad frente a Eficiencia, Escalabilidad y Mantenibilidad). |
-| NFR-008 | NFR-012 | Ninguna. |
-| NFR-009 | NFR-013 | Ninguna. |
-| NFR-010 | NFR-014 | Ninguna. |
-| NFR-011 | NFR-03 | La plantilla excluye también la aplicación de escritorio y precisa que no se instala software en el dispositivo cliente. El catálogo local solo menciona la ausencia de aplicación nativa. |
-| NFR-012 | NFR-015 | Ninguna. |
-| NFR-013 | NFR-016 | Ninguna. |
-| NFR-014 | NFR-017 | Ninguna. |
-| NFR-015 | NFR-02 | La plantilla exige además que la plataforma no almacene la contraseña de Google y tiene ámbito global. El catálogo local tiene ámbito local y lo relaciona con UR-02, FR-216 y FR-217. |
-
-Los NFR de las columnas «Ninguna» y «Mismo texto» tienen idéntica redacción, salvo el identificador citado. La traducción cambia únicamente el número, no el requisito.
 
 ## Anexo. Versión original errónea de UC-05
 
