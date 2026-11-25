@@ -2,8 +2,8 @@
 
 ## Especificación de requisitos de software
 
-**Versión:** 0.10  
-**Fecha:** 23/09/2026  
+**Versión:** 0.17
+**Fecha:** 19/11/2026
 **Estado:** Base documental con glosario incorporado y ampliación de NFR; consolidación y trazabilidad pendientes
 **Destinatarios:** partes interesadas del proyecto
 
@@ -122,6 +122,12 @@ El rol de nutricionista reúne las funciones y permisos que inicialmente se
 atribuían por separado a médicos y nutricionistas. La SRS v1.0 precisará los
 permisos y las necesidades específicas de cada clase mediante los requisitos
 de usuario y funcionales correspondientes.
+
+Las aclaraciones de Gestión de usuarios se recogen en el
+[acta de información del dominio](../captura/acta-acuerdos-informacion-dominio.md#91-gestión-de-usuarios).
+El catálogo mantiene su redacción canónica en FR-218 (cuenta personal única),
+FR-212 (compatibilidad de perfiles) y FR-219 (participación del paciente en el
+cuidado). Se conservan las condiciones de habilitación de cada perfil.
 
 ### 2.3 Entorno operativo
 
@@ -327,16 +333,18 @@ registrarán los huecos que el modelo permita descubrir.
 
 ### 10.3 Modelo de dominio conceptual
 
-El modelo de dominio conceptual se elaborará y refinará progresivamente,
+El modelo de dominio conceptual (cuya estructura provisional ya está disponible en
+la [plantilla del modelo de dominio](../modelos/plantilla-modelo-dominio.md)) se
+elaborará y refinará progresivamente,
 incluidas las asociaciones, multiplicidades y organización conceptual en
 paquetes.
 
 ## 11. Trazabilidad y control de cambios
 
 Se incorporan los cambios compatibles de la plantilla en el commit
-`caca2e4e64bcf1af108764fc18554a2b5d28e5dd`, conservando el glosario local y
-añadiendo Alias, Cuenta activa, Perfil de salud, Dato fisiológico y Restricción
-alimentaria. Los requisitos nuevos y sus correspondencias se registran en el
+`caca2e4e64bcf1af108764fc18554a2b5d28e5dd` y las revisiones posteriores hasta
+`7ee7abc`, conservando el glosario local y la numeración local de NFR. Los
+requisitos nuevos y sus correspondencias se registran en el
 [catálogo](./catalogo-requisitos.md#7-control-de-cambios). Esta integración
 permanece pendiente de consolidación y no declara una nueva línea base.
 
@@ -346,6 +354,17 @@ relaciones atómicas se mantienen en el
 [catálogo de requisitos](./catalogo-requisitos.md): objetivo de negocio → UR;
 UR → FR; y FR o NFR → modelo, historia o criterio de aceptación.
 
+El catálogo v1.16 conserva las relaciones de NFR-010 y NFR-011 (NFR-005 y NFR-006
+en la plantilla) por UR y por operación cubierta en sus apartados 5 y 6. Se
+conservan los objetivos de rendimiento y las condiciones de medición del acta
+técnica, §§2.1.2–2.1.3.
+
+La revisión del 19/11/2026 incorpora los acuerdos de Gestión de usuarios
+mediante [SC-001](../cambios/registro-solicitudes-cambio.md#solicitudes) y
+[DEC-001](../decisiones/registro-decisiones.md#decisiones). El catálogo v1.16
+y esta SRS v0.17 corresponden a esa misma revisión documental. No se declara
+una nueva línea base.
+
 Esta estructura permite analizar una solicitud de cambio y proponer una
 evolución controlada de la línea base. Las historias de usuario, el backlog,
 las tareas y la Definition of Done se gestionan fuera de la SRS, aunque puedan
@@ -353,13 +372,18 @@ mantener enlaces hacia sus requisitos de origen.
 
 ## Estado de la versión
 
-Esta versión 0.10 define la arquitectura documental, el contexto confirmado y
+Esta versión 0.17 define la arquitectura documental, el contexto confirmado y
 las convenciones de redacción de UR, FR y NFR. Incorpora los acuerdos del acta
 de captura de requisitos generales sobre el rol de nutricionista, el alcance, los idiomas, los navegadores y la
 infraestructura. También separa la SRS, que explica la especificación integrada,
 del catálogo, que es la fuente canónica de los requisitos atómicos. Los
 requisitos de usuario y funcionales ya están consolidados en el catálogo. El
 glosario forma parte de esta SRS.
+
+Incorpora la restricción de preferencias dietéticas a pacientes (FR-220, SC-002)
+y las aclaraciones de identidad, compatibilidad de perfiles y cuidado
+confirmadas en el acta de información del dominio. Los aspectos aplazados de
+esa acta conservan su estado pendiente.
 
 Antes de publicar la línea base v1.0 se consolidarán los requisitos no
 funcionales y los enlaces de trazabilidad. El glosario local se conserva y se

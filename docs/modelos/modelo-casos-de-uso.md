@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 2.5 | 23/10/2026 | Revisado; descripciones detalladas de UC-05 y UC-21 incorporadas |
+| 2.6 | 19/11/2026 | En revisión; preferencias dietéticas restringidas a pacientes en UC-05 (SC-002) |
 
 **Iteración de referencia:** E2. Este documento recoge el modelo acumulado después de incorporar la vista de salud y recetas.
 
@@ -213,11 +213,11 @@ NFR-002, NFR-003, NFR-008, NFR-009 y NFR-014 condicionan los datos, la recuperac
 
 ## 6 Descripciones de los casos de uso
 
-**Estado de la especificación.** Las descripciones detalladas de UC-05 y UC-21 se recogen en los apartados 6.1 y 6.2. Las actas aprobadas definen el comportamiento acordado y delimitan su alcance.
+**Estado de la especificación.** Las descripciones detalladas de UC-05 y UC-21 se recogen en los apartados 6.1 y 6.2. El acta de UC-21 define su comportamiento aprobado. UC-05 incorpora la restricción de preferencias dietéticas y queda pendiente de revisión documental.
 
-**Alcance de las descripciones.** Las actas aprobadas de UC-05 y UC-21, v1.1, complementan el catálogo y concretan el siguiente alcance:
+**Alcance de las descripciones.** Las actas de UC-05 v1.2 y UC-21 v1.1 complementan el catálogo y concretan el siguiente alcance:
 
-UC-05 Actualizar perfil incluye la consulta y actualización de los datos personales, de contacto y de las preferencias dietéticas del perfil propio. El [acta de UC-05](../captura/acta-acuerdos-uc-05-actualizar-perfil.md) define los campos editables, la validación, el guardado, la cancelación y la respuesta ante fallos.
+UC-05 Actualizar perfil incluye la consulta y actualización de los datos personales y de contacto del perfil propio; las preferencias dietéticas solo están disponibles para quienes tienen perfil de paciente. El [acta de UC-05](../captura/acta-acuerdos-uc-05-actualizar-perfil.md) define los campos editables, la validación, el guardado, la cancelación y la respuesta ante fallos.
 
 UC-21 Buscar recetas incluye la búsqueda de recetas, la presentación de resultados y la consulta del detalle de una receta seleccionada entre esos resultados. Este alcance está definido en el [plan de E2, apartado 4.4](../planificacion/plan-iteracion-e2.md#44-búsqueda-y-consulta-de-recetas) y en el [acta de UC-21](../captura/acta-acuerdos-uc-21-buscar-recetas.md).
 
@@ -231,7 +231,7 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 **Identificador y nombre del caso de uso:** UC-05 · Actualizar perfil.
 
-**Objetivo:** actualizar los datos personales, de contacto y las preferencias del perfil propio.
+**Objetivo:** actualizar los datos personales, de contacto y las preferencias disponibles para el perfil propio.
 
 **Participantes:** Usuario registrado, como actor principal. No se identifican actores de apoyo en este recorrido.
 
@@ -242,7 +242,7 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 **Escenario principal de éxito:**
 
 1. El usuario solicita actualizar su perfil.
-2. El sistema presenta los datos actuales y distingue los valores editables de los que permanecen fijos.
+2. El sistema presenta los datos actuales y distingue los valores editables de los que permanecen fijos. Las preferencias dietéticas solo se presentan a pacientes.
 3. El usuario modifica los valores permitidos.
 4. El usuario solicita guardar los cambios.
 5. El sistema comprueba los datos según las reglas del acta.
@@ -272,7 +272,7 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 **Postcondiciones:** con éxito, el perfil contiene los cambios guardados y el usuario recibe la confirmación. El alias y el correo electrónico mantienen sus valores. Si los datos son inválidos, el guardado falla o el usuario cancela, el perfil conserva los valores anteriores; no queda una actualización parcial.
 
-**Reglas y NFR pertinentes:** UR-03, FR-019 y NFR-010 (NFR-014 en el catálogo local, según el [anexo de equivalencia](#anexo-equivalencia-de-los-nfr-de-la-plantilla)), conforme al [respaldo del apartado 5](#5-respaldo-en-los-requisitos), y [acta de UC-05](../captura/acta-acuerdos-uc-05-actualizar-perfil.md), apartado 2. Se pueden modificar el nombre completo, el teléfono, la dirección postal y las preferencias dietéticas. El alias y el correo electrónico son de consulta. El nombre y el teléfono son obligatorios; los valores formados solo por espacios se consideran vacíos y el teléfono admite los prefijos internacionales previstos para el registro. La dirección y las preferencias son opcionales; se pueden seleccionar ninguna, una o varias de estas preferencias: vegana, sin gluten y baja en carbohidratos. Estas preferencias no modifican datos de salud ni alergias.
+**Reglas y NFR pertinentes:** UR-03, FR-019, FR-220 y NFR-010 (NFR-014 en el catálogo local, según el [anexo de equivalencia](#anexo-equivalencia-de-los-nfr-de-la-plantilla)), conforme al [respaldo del apartado 5](#5-respaldo-en-los-requisitos), y [acta de UC-05](../captura/acta-acuerdos-uc-05-actualizar-perfil.md), apartado 2. Se pueden modificar el nombre completo, el teléfono y la dirección postal. Solo los pacientes pueden modificar preferencias dietéticas. El alias y el correo electrónico son de consulta. El nombre y el teléfono son obligatorios; los valores formados solo por espacios se consideran vacíos y el teléfono admite los prefijos internacionales previstos para el registro. La dirección y las preferencias dietéticas son opcionales; un paciente puede seleccionar ninguna, una o varias de estas preferencias: vegana, sin gluten y baja en carbohidratos. Estas preferencias no modifican datos de salud ni alergias.
 
 **Preguntas abiertas:** no se requieren preguntas adicionales para el comportamiento cubierto por el acta. Cualquier discrepancia nueva entre las fuentes deberá registrarse antes de ampliar el recorrido.
 
